@@ -72,6 +72,7 @@ GameObject:
   - component: {fileID: 54008247406494262}
   - component: {fileID: 135637235488494608}
   - component: {fileID: 114094338777710978}
+  - component: {fileID: 135485997060930324}
   m_Layer: 9
   m_Name: Walkable_Asteroid_Small
   m_TagString: Enemy
@@ -116,7 +117,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1525366789405690}
   m_LocalRotation: {x: 0, y: 0, z: -0.42261827, w: 0.9063079}
-  m_LocalPosition: {x: 0, y: -7.61, z: 0}
+  m_LocalPosition: {x: -53.798923, y: -0.39874014, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 4746843814606672}
@@ -309,6 +310,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_moveSpeed: -5
+--- !u!135 &135485997060930324
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1525366789405690}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.23
+  m_Center: {x: -0.35, y: -0.49, z: 0}
 --- !u!135 &135637235488494608
 SphereCollider:
   m_ObjectHideFlags: 1
@@ -319,8 +332,8 @@ SphereCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 1.5
-  m_Center: {x: 0.24, y: -0.3, z: 0}
+  m_Radius: 1.14
+  m_Center: {x: 0.27, y: 0.45, z: 0}
 --- !u!205 &205637474597152600
 LODGroup:
   m_ObjectHideFlags: 1

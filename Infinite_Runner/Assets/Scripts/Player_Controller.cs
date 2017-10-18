@@ -6,13 +6,21 @@ public class Player_Controller : MonoBehaviour {
 
 	public float speed;
 	public float jumpSpeed;
+
+	public float groundRadius;
 	public Camera mainCamera;
+
+	public Transform[] groundPoints;
 	private float horizontalMovement;
 	private Vector3 cameraDist;
 	private Rigidbody myRigidbody;
 	private Animator myAnimator;
 	private bool facingRight;
+	private bool isGrounded;
 	private bool isJumping;
+	private bool isFalling;
+
+	private LayerMask whatIsGround;
 
 	// Use this for initialization
 	void Start () {
@@ -28,10 +36,6 @@ public class Player_Controller : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void FixedUpdate () {
-		horizontalMovement = Input.GetAxis("Horizontal");
-		if (Input.GetKeyDown(KeyCode.Space) && !isJumping) {
-			isJumping = true;
-		}
 		mainCamera.transform.position = new Vector3 (mainCamera.transform.position.x, GetComponent<Transform>().position.y, mainCamera.transform.position.z);
 		HandleMovement();
 	}
@@ -44,10 +48,16 @@ public class Player_Controller : MonoBehaviour {
 	}
 
 	private void HandleMovement() {
+		isGrounded = IsGrounded();
+		if (Input.GetKeyDown(KeyCode.Space) && isGrounded) {
+			isJumping = true;
+		}
+		horizontalMovement = Input.GetAxis("Horizontal");
 		Vector3 newVelocity = myRigidbody.velocity;
 		if (isJumping) {
 			newVelocity.y = jumpSpeed;
 			isJumping = false;
+			isGrounded = false;
 		} 
 		newVelocity.x = horizontalMovement * speed;
 		myRigidbody.velocity = newVelocity;
@@ -59,5 +69,21 @@ public class Player_Controller : MonoBehaviour {
 		Vector3 playerLocation = GetComponent<Transform>().position;
 		Vector3 cameraLocation = mainCamera.transform.position;
 		cameraDist = playerLocation - cameraLocation;
+	}
+
+	private bool IsGrounded () {
+		bool retval = false;
+		if (myRigidbody.velocity.y <= 0) {
+			foreach (Transform point in groundPoints) {
+				Collider[] colliders = Physics.OverlapSphere(point.position, groundRadius, whatIsGround);
+				for (int i = 0; i < colliders.Length; i++) {
+					if (colliders[i].gameObject != gameObject) {
+						retval = true;
+						break;
+					}
+				}
+			}
+		}
+		return retval;
 	}
 }
