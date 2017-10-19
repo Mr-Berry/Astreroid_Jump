@@ -6,33 +6,30 @@ public class Player_Controller : MonoBehaviour {
 
 	public float speed;
 	public float jumpSpeed;
-
 	public float groundRadius;
 	public Camera mainCamera;
-
 	public Transform[] groundPoints;
 	private float horizontalMovement;
 	private Vector3 cameraDist;
 	private Rigidbody myRigidbody;
 	private Animator myAnimator;
-	private bool facingRight;
+	private bool facingRight = true;
 	private bool isGrounded;
-	private bool isJumping;
-	private bool isFalling;
-
-	private LayerMask whatIsGround;
+	private bool isJumping = false;
+	private bool isFalling = false;
+	private bool isBoosting = false;
+	public LayerMask whatIsGround;
+	private float boosterFuel = 1f;
 
 	// Use this for initialization
 	void Start () {
 		myRigidbody = GetComponent<Rigidbody>();
 		myAnimator = GetComponent<Animator>();
-		facingRight = true;
-		isJumping = false;
 		SetCameraDistance();
 	}
 	
 	void Update () {
-
+		handleInput();
 	}
 	// Update is called once per frame
 	void FixedUpdate () {
@@ -49,16 +46,15 @@ public class Player_Controller : MonoBehaviour {
 
 	private void HandleMovement() {
 		isGrounded = IsGrounded();
-		if (Input.GetKeyDown(KeyCode.Space) && isGrounded) {
-			isJumping = true;
-		}
-		horizontalMovement = Input.GetAxis("Horizontal");
 		Vector3 newVelocity = myRigidbody.velocity;
 		if (isJumping) {
 			newVelocity.y = jumpSpeed;
 			isJumping = false;
 			isGrounded = false;
-		} 
+		} else if (isBoosting) {
+			newVelocity.y += 0.8f;
+			isBoosting = false;
+		}
 		newVelocity.x = horizontalMovement * speed;
 		myRigidbody.velocity = newVelocity;
 		myAnimator.SetFloat("speed", Mathf.Abs(horizontalMovement));
@@ -85,5 +81,14 @@ public class Player_Controller : MonoBehaviour {
 			}
 		}
 		return retval;
+	}
+
+	private void handleInput () {
+		horizontalMovement = Input.GetAxis("Horizontal");
+		if (Input.GetAxis("Jump") > 0 && isGrounded) {
+			isJumping = true;
+		} else if (Input.GetAxis("Jump") > 0 && !isGrounded && boosterFuel > 0) {
+			isBoosting = true;
+		}
 	}
 }

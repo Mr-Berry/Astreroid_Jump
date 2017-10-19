@@ -16,7 +16,7 @@ public class ResetObjects : MonoBehaviour {
 		
 	}
 
-	void OnCollisionEnter (Collision other) {
+	void OnCollisionEnter( Collision other) {
 		Vector3 newPos = other.transform.position;
 		newPos.x = generationPoint.position.x;
 		other.transform.position = newPos;

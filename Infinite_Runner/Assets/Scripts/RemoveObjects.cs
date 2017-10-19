@@ -14,7 +14,7 @@ public class RemoveObjects : MonoBehaviour {
 		
 	}
 
-	void OnCollisionEnter (Collision other) {
+	void OnTriggerExit (Collider other) {
 		DestroyObject(other.gameObject);
 	}
 }

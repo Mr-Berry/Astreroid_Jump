@@ -19,7 +19,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4660181462344976}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PalmBone002 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -34,7 +34,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4636463781698838}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GroundPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -51,7 +51,7 @@ GameObject:
   - component: {fileID: 4682455857192008}
   - component: {fileID: 33940647953919772}
   - component: {fileID: 23350884066732900}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Leg_02_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -68,7 +68,7 @@ GameObject:
   - component: {fileID: 4562340997317838}
   - component: {fileID: 33544089781456526}
   - component: {fileID: 23722728669169482}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Suit_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -83,7 +83,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4282917477784792}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RArmForearm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,7 @@ GameObject:
   - component: {fileID: 4067307954652488}
   - component: {fileID: 33065001397628584}
   - component: {fileID: 23777013552850918}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Leg_02_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -116,7 +116,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4744742146190860}
   - component: {fileID: 108132483665643514}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spotlight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -131,7 +131,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4009344990975782}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RThigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -146,7 +146,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4317144007696140}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spine2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -161,7 +161,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4688041673020610}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Spine1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -176,7 +176,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4781014881954160}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RCalf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,7 +191,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4387976823156290}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -206,7 +206,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4572041173427858}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Pelvis
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -221,7 +221,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4895091394107372}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Ribcage
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -236,7 +236,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4092003739049112}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LUpperarm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -252,7 +252,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4778480305145230}
   - component: {fileID: 137848552149267154}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Belt_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -267,7 +267,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4496494252172678}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PalmBone002
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -284,7 +284,7 @@ GameObject:
   - component: {fileID: 4774691085350898}
   - component: {fileID: 33771983515010256}
   - component: {fileID: 23316975188784112}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Arm_02_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -300,7 +300,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4695480602142542}
   - component: {fileID: 137853549723259686}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SpaceMan_Base
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -317,7 +317,7 @@ GameObject:
   - component: {fileID: 4887160826995200}
   - component: {fileID: 33942980843911136}
   - component: {fileID: 23617686104590232}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Jets_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -332,7 +332,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4697840720309002}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RFoot
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -349,7 +349,7 @@ GameObject:
   - component: {fileID: 4177917695840044}
   - component: {fileID: 33876497424203672}
   - component: {fileID: 23238533415931072}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Plane.013
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -364,7 +364,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4272574203185074}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -379,7 +379,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4500233292604166}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PalmBone001
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -396,7 +396,7 @@ GameObject:
   - component: {fileID: 4818974200397814}
   - component: {fileID: 33646640246973782}
   - component: {fileID: 23064599848952140}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Helmet_02
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -411,7 +411,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4208975347483744}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GroundPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -426,7 +426,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4820213506336142}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LPalm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -441,7 +441,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4079645808889364}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: GroundPoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -461,7 +461,8 @@ GameObject:
   - component: {fileID: 65112995799198498}
   - component: {fileID: 114590422724537324}
   - component: {fileID: 114484975607446414}
-  m_Layer: 0
+  - component: {fileID: 114941199151183596}
+  m_Layer: 10
   m_Name: Player
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -476,7 +477,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4557938428065980}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Neck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -492,7 +493,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4020123886979350}
   - component: {fileID: 137524602501275292}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: SpaceMan_Clothe
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -507,7 +508,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4013358022866860}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: PalmBone001 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -522,7 +523,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4215138235308454}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RArmUpperarm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -537,7 +538,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4680467876470510}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RArmPalm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -554,7 +555,7 @@ GameObject:
   - component: {fileID: 4169228523509266}
   - component: {fileID: 33058728117998374}
   - component: {fileID: 23455468500676344}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Arm_02_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -569,7 +570,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4358550736064904}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: RArmCollarbone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -584,7 +585,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4636967049081942}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LCalf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -599,7 +600,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4613373832647748}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LThigh
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -614,7 +615,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4853356612874588}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LForearm
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -629,7 +630,7 @@ GameObject:
   serializedVersion: 5
   m_Component:
   - component: {fileID: 4024475857010174}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: LCollarbone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -794,7 +795,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1679037673547604}
   m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 5, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 15, y: 15, z: 15}
   m_Children:
   - {fileID: 4778480305145230}
@@ -1536,7 +1537,7 @@ BoxCollider:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1679037673547604}
-  m_Material: {fileID: 0}
+  m_Material: {fileID: 13400000, guid: 1ba7874ca00c8974da62c5cd3a53cb1d, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
@@ -1620,11 +1621,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   jumpSpeed: 25
+  groundRadius: 1
   mainCamera: {fileID: 0}
   groundPoints:
   - {fileID: 4208975347483744}
   - {fileID: 4079645808889364}
   - {fileID: 4636463781698838}
+  whatIsGround:
+    serializedVersion: 2
+    m_Bits: 512
+--- !u!114 &114941199151183596
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1679037673547604}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c5a865ee69c2d394e8c1ce2a8298cf57, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!137 &137524602501275292
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

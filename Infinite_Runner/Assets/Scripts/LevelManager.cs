@@ -31,25 +31,24 @@ public class LevelManager : MonoBehaviour {
 		}
 		DontDestroyOnLoad(this.gameObject);
 	}
-	void Start () {
-		newPlatform = Instantiate(w_asteroid[0]);
-		lastPlatformPos = newPlatform.transform;
-		InitA_Asteroids();
+
+	private GameObject CreateNewWalkable () {
+		GameObject temp = Instantiate(GetRandomAsteroid(w_asteroid));
+		temp.transform.position = GetNewPosition();
+		int randomint = Random.Range(3,6);
+		Vector3 newScale = new Vector3(randomint,randomint,randomint);
+		temp.transform.localScale = newScale;
+		return temp;
 	}
 
-	public void RestartLevel () {
-	// accessable from anywhere
+	private Vector3 GetNewPosition () {
+		Vector3 pos = newPlatform.transform.position;
+		int offset = spaceBetween + Random.Range(-10,10);
+		pos.x += offset;
+		return pos;
+	}
 
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		if (generationPoint.position.x > lastPlatformPos.position.x) {			
-			newPlatform = CreateNewWalkable();
-			lastPlatformPos	= newPlatform.transform;
-			w_asteroids.Add(newPlatform);
-		}
-	}
+	private GameObject GetRandomAsteroid (GameObject[] array) { return array[Random.Range(0, array.Length)]; }
 
 	private void InitA_Asteroids() {
 		a_asteroids = new GameObject[ambientCount];
@@ -71,22 +70,24 @@ public class LevelManager : MonoBehaviour {
 		}
 	}
 
-	private GameObject GetRandomAsteroid (GameObject[] array) { return array[Random.Range(0, array.Length)]; }
-
-	private GameObject CreateNewWalkable () {
-		GameObject temp = Instantiate(GetRandomAsteroid(w_asteroid));
-		temp.transform.position = GetNewPosition();
-		int randomint = Random.Range(3,6);
-		Vector3 newScale = new Vector3(randomint,randomint,randomint);
-		temp.transform.localScale = newScale;
-		return temp;
+	public void RestartLevel () {
+	// accessable from anywhere
 	}
 
-	private Vector3 GetNewPosition () {
-			Vector3 pos = newPlatform.transform.position;
-			int offset = spaceBetween + Random.Range(-10,10);
-			pos.x += offset;
-			return pos;
+	void Start () {
+		newPlatform = Instantiate(w_asteroid[1]);
+		lastPlatformPos = newPlatform.transform;
+		w_asteroids.Add(newPlatform);
+		InitA_Asteroids();
+	}
+
+	// Update is called once per frame
+	void Update () {
+		if (generationPoint.position.x > lastPlatformPos.position.x) {			
+			newPlatform = CreateNewWalkable();
+			lastPlatformPos	= newPlatform.transform;
+			w_asteroids.Add(newPlatform);
+		}
 	}
 }
 
