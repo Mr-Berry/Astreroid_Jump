@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class AmbientMovement : MonoBehaviour {
 
-	public float m_moveSpeed;
+	public int moveSpeed = -5;
+	static private float difficulty = 1;
 	private Transform m_tf;
 	// Use this for initialization
 	void Start () {
@@ -14,7 +15,11 @@ public class AmbientMovement : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		Vector3 newPos = m_tf.position;
-		newPos.x += m_moveSpeed * Time.deltaTime;
+		newPos.x += (moveSpeed * difficulty) * Time.deltaTime;
 		m_tf.position = newPos;
+	}
+
+	public void InceaseSpeed () {
+		difficulty *= 1.02f;
 	}
 }

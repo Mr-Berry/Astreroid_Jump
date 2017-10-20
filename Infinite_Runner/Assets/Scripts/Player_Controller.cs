@@ -18,6 +18,7 @@ public class Player_Controller : MonoBehaviour {
 	private bool isJumping = false;
 	private bool isFalling = false;
 	private bool isBoosting = false;
+	private bool canAdd = false;
 	public LayerMask whatIsGround;
 	private float boosterFuel = 1f;
 
@@ -54,6 +55,8 @@ public class Player_Controller : MonoBehaviour {
 		} else if (isBoosting) {
 			newVelocity.y += 0.8f;
 			isBoosting = false;
+		} else if (!isGrounded && myRigidbody.velocity.y <= 0) {
+			myAnimator.SetBool("isJumping", false);
 		}
 		newVelocity.x = horizontalMovement * speed;
 		myRigidbody.velocity = newVelocity;
@@ -87,8 +90,13 @@ public class Player_Controller : MonoBehaviour {
 		horizontalMovement = Input.GetAxis("Horizontal");
 		if (Input.GetAxis("Jump") > 0 && isGrounded) {
 			isJumping = true;
+			myAnimator.SetBool("isJumping", true);
 		} else if (Input.GetAxis("Jump") > 0 && !isGrounded && boosterFuel > 0) {
 			isBoosting = true;
 		}
+	}
+
+	public void InceaseSpeed () {
+		speed *= 1.01f;
 	}
 }

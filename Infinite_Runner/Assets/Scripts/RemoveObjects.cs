@@ -15,6 +15,9 @@ public class RemoveObjects : MonoBehaviour {
 	}
 
 	void OnTriggerExit (Collider other) {
-		DestroyObject(other.gameObject);
+		Component temp = other.GetComponent<Player_Controller>();
+		if (temp == null) {
+			DestroyObject(other.gameObject);
+		}
 	}
 }

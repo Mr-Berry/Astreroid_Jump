@@ -8,14 +8,16 @@ public class LevelManager : MonoBehaviour {
 	public GameObject player;
 	public Transform generationPoint;
 	public int spaceBetween;
+	public GameObject pickup;
+	public Transform ambientParent;
+	public GameObject[] a_asteroid;
+	public GameObject[] w_asteroid;
+	public static LevelManager Instance { get{ return m_instance;} }
 	private Transform lastPlatformPos;
 	private GameObject newPlatform;
 	private static LevelManager m_instance = null;
-	public static LevelManager Instance { get{ return m_instance;} }
-	public GameObject[] a_asteroid;
 	private GameObject[] a_asteroids;
 	private List<GameObject> w_asteroids = new List<GameObject>();
-	public GameObject[] w_asteroid;
 	private int widthSml;
 	private int widthMed;
 	private int widthLrg;
@@ -56,7 +58,7 @@ public class LevelManager : MonoBehaviour {
 		for (int i = 0; i < ambientCount; i++) {
 			GameObject newAsteroid = Instantiate(GetRandomAsteroid(a_asteroid));
 			a_asteroids[i] = newAsteroid;
-			a_asteroids[i].GetComponent<AmbientMovement>().m_moveSpeed = -1 * Random.Range(5,30);
+			a_asteroids[i].GetComponent<AmbientMovement>().moveSpeed = -1 * Random.Range(5,30);
 			Vector3 pos = generationPoint.position;
 			Vector2 range = new Vector2(-1 * generationPoint.position.x, generationPoint.position.x);
 			pos.y += Random.Range(-30,30);
@@ -67,6 +69,7 @@ public class LevelManager : MonoBehaviour {
 			int scale = Random.Range(1,5);
 			Vector3 newScale = new Vector3 (scale,scale,scale);
 			a_asteroids[i].transform.localScale = newScale;
+			a_asteroids[i].transform.parent = ambientParent;
 		}
 	}
 
@@ -78,6 +81,7 @@ public class LevelManager : MonoBehaviour {
 		newPlatform = Instantiate(w_asteroid[1]);
 		lastPlatformPos = newPlatform.transform;
 		w_asteroids.Add(newPlatform);
+		newPlatform.transform.parent = this.transform;
 		InitA_Asteroids();
 	}
 
@@ -87,6 +91,7 @@ public class LevelManager : MonoBehaviour {
 			newPlatform = CreateNewWalkable();
 			lastPlatformPos	= newPlatform.transform;
 			w_asteroids.Add(newPlatform);
+			newPlatform.transform.parent = this.transform;
 		}
 	}
 }

@@ -89,6 +89,8 @@ GameObject:
   - component: {fileID: 54214079874193532}
   - component: {fileID: 65691714894302982}
   - component: {fileID: 114374153186905480}
+  - component: {fileID: 135265775619145386}
+  - component: {fileID: 135229122226044256}
   m_Layer: 9
   m_Name: Walkable_Asteroid_Large
   m_TagString: Enemy
@@ -145,7 +147,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1994368270271682}
   m_LocalRotation: {x: 0, y: 0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: -15.532954, y: -20.873283, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_Children:
   - {fileID: 4441811560604986}
@@ -320,7 +322,31 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77ab15410937dc846a73c147446aee4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_moveSpeed: -5
+  moveSpeed: -5
+--- !u!135 &135229122226044256
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1994368270271682}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 0.61
+  m_Center: {x: 0, y: -0.86, z: 0}
+--- !u!135 &135265775619145386
+SphereCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1994368270271682}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Radius: 1.12
+  m_Center: {x: -0.45, y: 0.15, z: 0}
 --- !u!205 &205321898824882778
 LODGroup:
   m_ObjectHideFlags: 1
