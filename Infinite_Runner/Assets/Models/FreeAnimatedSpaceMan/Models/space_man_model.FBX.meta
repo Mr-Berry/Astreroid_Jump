@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 90dac3abf1179b342b84e3c83039fa77
-timeCreated: 1508455661
+timeCreated: 1508481726
 licenseType: Pro
 ModelImporter:
   serializedVersion: 21
@@ -119,7 +119,9 @@ ModelImporter:
     optimizeGameObjects: 0
     motionNodeName: 
     rigImportErrors: 
-    rigImportWarnings: 
+    rigImportWarnings: "Avatar Rig Configuration mis-match. Bone length in configuration
+      does not match position in animation file:\n\t'Neck' : position error = 207.027603
+      mm\n\t'Head' : position error = 157.089722 mm\n"
     animationImportErrors: 
     animationImportWarnings: 
     animationRetargetingWarnings: 
@@ -438,12 +440,12 @@ ModelImporter:
       scale: {x: 1.000001, y: 0.9999999, z: 0.9999995}
     - name: Neck
       parentName: Ribcage
-      position: {x: -0.000154171, y: -0.0070814798, z: -3.3692116e-10}
-      rotation: {x: -9.975413e-15, y: 0.000000022174971, z: 0.14685808, w: 0.9891576}
+      position: {x: -0.018, y: -0.035, z: -0}
+      rotation: {x: -0.000000027142011, y: -0.000000081325226, z: 0.3119206, w: 0.95010823}
       scale: {x: 1.0000001, y: 1.0000001, z: 1}
     - name: Head
       parentName: Neck
-      position: {x: -0.052608296, y: 0.0000000047683715, z: 0}
+      position: {x: -0.03, y: 0.011, z: -0}
       rotation: {x: 4.054773e-15, y: -0.000000022174973, z: -0.14685808, w: 0.9891576}
       scale: {x: 0.99999994, y: 0.99999994, z: 1}
     - name: Helmet_02

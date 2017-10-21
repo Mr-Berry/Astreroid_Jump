@@ -25,6 +25,7 @@ public class LevelManager : MonoBehaviour {
 	private GameObject[] gameObjects;
 
 	void Awake () {
+		/*
 		if (m_instance != null && m_instance != this) {
 			Destroy(this.gameObject);
 			return;
@@ -32,6 +33,7 @@ public class LevelManager : MonoBehaviour {
 			m_instance = this;
 		}
 		DontDestroyOnLoad(this.gameObject);
+		*/
 	}
 
 	private GameObject CreateNewWalkable () {
@@ -61,8 +63,8 @@ public class LevelManager : MonoBehaviour {
 			a_asteroids[i].GetComponent<AmbientMovement>().moveSpeed = -1 * Random.Range(5,30);
 			Vector3 pos = generationPoint.position;
 			Vector2 range = new Vector2(-1 * generationPoint.position.x, generationPoint.position.x);
-			pos.y += Random.Range(-30,30);
-			pos.z += Random.Range(20,50);
+			pos.y += Random.Range(-50,20);
+			pos.z += Random.Range(40,70);
 			pos.x = Random.Range(range.x,range.y);
 			a_asteroids[i].GetComponent<Transform>().position = pos;
 			a_asteroids[i].GetComponent<RandomRotator>().tumble = Random.Range(0.5f, 2f);
@@ -71,10 +73,6 @@ public class LevelManager : MonoBehaviour {
 			a_asteroids[i].transform.localScale = newScale;
 			a_asteroids[i].transform.parent = ambientParent;
 		}
-	}
-
-	public void RestartLevel () {
-	// accessable from anywhere
 	}
 
 	void Start () {
@@ -93,6 +91,10 @@ public class LevelManager : MonoBehaviour {
 			w_asteroids.Add(newPlatform);
 			newPlatform.transform.parent = this.transform;
 		}
+	}
+
+	public void InitGame() {
+		player.transform.position = Vector3.zero;
 	}
 }
 
