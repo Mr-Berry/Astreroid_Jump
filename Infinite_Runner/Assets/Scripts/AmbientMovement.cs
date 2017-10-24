@@ -22,4 +22,8 @@ public class AmbientMovement : MonoBehaviour {
 	public void InceaseSpeed () {
 		difficulty *= 1.02f;
 	}
+
+	public void ResetSpeed () {
+		difficulty = 1;
+	}
 }

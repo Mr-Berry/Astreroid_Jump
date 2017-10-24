@@ -84,10 +84,6 @@ public class LevelManager : MonoBehaviour {
 
 	void Start () {
 		playerStartPos = player.transform.position;
-		newPlatform = Instantiate(w_asteroid[1]);
-		lastPlatformPos = newPlatform.transform;
-		w_asteroids.Add(newPlatform);
-		newPlatform.transform.parent = this.transform;
 		InitA_Asteroids();
 	}
 
@@ -102,10 +98,21 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	public void InitGame() {
+		RemoveExistingWalkables();
+		SpawnFirstWalkable();
 		player.transform.position = playerStartPos;
 		player.GetComponent<Rigidbody>().velocity = Vector3.zero;
 		player.GetComponent<Player_Controller>().boosterFuel = 1f;
 		player.GetComponent<ScoreTracker>().m_score = 0f;
+		player.GetComponent<AmbientMovement>().ResetSpeed();
+
+	}
+
+	public void RemoveExistingWalkables () {
+		foreach (GameObject asteroid in w_asteroids) {
+			Destroy(asteroid);
+		}
+		w_asteroids.Clear();
 	}
 
 	private void SpawnPickup (Vector3 pos) {
@@ -115,8 +122,14 @@ public class LevelManager : MonoBehaviour {
 		GameObject newPickup = Instantiate(pickup);
 		newPickup.transform.position = pos;	
 		newPickup.transform.parent = pickupParent;	
-		Debug.Log("Here");	
 		}
+	}
+
+	private void SpawnFirstWalkable () {
+		newPlatform = Instantiate(w_asteroid[1]);
+		lastPlatformPos = newPlatform.transform;
+		w_asteroids.Add(newPlatform);
+		newPlatform.transform.parent = this.transform;
 	}
 }
 
