@@ -7,7 +7,7 @@ public class ScoreTracker : MonoBehaviour {
 
 	public Text scoreText;
 
-	private float m_score;
+	public float m_score;
 	// Use this for initialization
 	void Start () {
 		m_score = 0f;
@@ -24,7 +24,7 @@ public class ScoreTracker : MonoBehaviour {
 
 	}
 
-	public void AddBonus (int pointsToAdd = 1) {
+	public void AddBonus (int pointsToAdd = 10) {
 		m_score += pointsToAdd;
 		SetText();
 	}

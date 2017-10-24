@@ -8,6 +8,8 @@ public class Player_Controller : MonoBehaviour {
 	public float speed;
 	public float jumpSpeed;
 	public float groundRadius;
+	public AudioClip jumpSound;
+	public AudioClip boostSound;
 	public Camera mainCamera;
 	public Transform[] groundPoints;
 	public ParticleSystem thrusters;
@@ -21,7 +23,7 @@ public class Player_Controller : MonoBehaviour {
 	private bool isFalling = false;
 	private bool isBoosting = false;
 	public LayerMask whatIsGround;
-	private float boosterFuel = 1f;
+	public float boosterFuel = 1f;
 	private float timer = 0f;
 
 	// Use this for initialization
@@ -51,7 +53,7 @@ public class Player_Controller : MonoBehaviour {
 	}
 	// Update is called once per frame
 	void FixedUpdate () {
-		mainCamera.transform.position = new Vector3 (mainCamera.transform.position.x, GetComponent<Transform>().position.y, mainCamera.transform.position.z);
+		mainCamera.transform.position = new Vector3 (mainCamera.transform.position.x, GetComponent<Transform>().position.y + 5, mainCamera.transform.position.z);
 		HandleMovement();
 	}
 
@@ -67,6 +69,7 @@ public class Player_Controller : MonoBehaviour {
 		Vector3 newVelocity = myRigidbody.velocity;
 		if (isJumping && isGrounded) {
 			newVelocity.y = jumpSpeed;
+			AudioSource.PlayClipAtPoint(jumpSound, transform.position);
 			isGrounded = false;
 			myAnimator.SetBool("isJumping", true);
 		} else if (isBoosting) {
@@ -124,6 +127,7 @@ public class Player_Controller : MonoBehaviour {
 			isFalling = false;
 			isBoosting = true;
 			thrusters.Play();
+			AudioSource.PlayClipAtPoint(boostSound,transform.position);
 		}
 		if (Input.GetAxis("Jump") == 0 && isBoosting) {
 			isBoosting = false;
@@ -133,5 +137,14 @@ public class Player_Controller : MonoBehaviour {
 
 	public void InceaseSpeed () {
 		speed *= 1.01f;
+	}
+
+	public void Refuel () {
+		if (boosterFuel >= 0.5f) {
+			boosterFuel = 1f;
+		} else {
+			boosterFuel += 0.5f;
+		}
+		Boosterbar.value = boosterFuel;
 	}
 }

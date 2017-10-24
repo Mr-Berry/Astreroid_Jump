@@ -16,8 +16,13 @@ public class PlayerDeath : MonoBehaviour {
 	}
 
 	void OnTriggerExit (Collider other) {
+		SetNewScore(other);
 		gameStates.setCamera();
 		gameStates.setGameState(GameStates.STATES.GAMEOVER);
 	}
 
+	private void SetNewScore (Collider other) {
+		int newScore = (int)other.GetComponent<ScoreTracker>().m_score;
+		PlayerPrefs.SetInt("newScore", newScore);
+	}
 }

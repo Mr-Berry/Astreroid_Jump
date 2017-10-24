@@ -812,7 +812,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1679037673547604}
   m_LocalRotation: {x: -0, y: -0.7071068, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.0002598688, y: -0.59641176, z: 0.009544897}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 15, y: 15, z: 15}
   m_Children:
   - {fileID: 4778480305145230}
@@ -1653,6 +1653,8 @@ MonoBehaviour:
   speed: 10
   jumpSpeed: 25
   groundRadius: 1
+  jumpSound: {fileID: 8300000, guid: f9d59a2bdafcf7640be898fc4f4196ee, type: 3}
+  landSound: {fileID: 8300000, guid: 457a1ba4795c4e843bccd2b3930d1206, type: 3}
   mainCamera: {fileID: 0}
   groundPoints:
   - {fileID: 4208975347483744}
@@ -1663,6 +1665,7 @@ MonoBehaviour:
   whatIsGround:
     serializedVersion: 2
     m_Bits: 512
+  boosterFuel: 1
 --- !u!114 &114941199151183596
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1675,6 +1678,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreText: {fileID: 0}
+  m_score: 0
 --- !u!137 &137524602501275292
 SkinnedMeshRenderer:
   m_ObjectHideFlags: 1

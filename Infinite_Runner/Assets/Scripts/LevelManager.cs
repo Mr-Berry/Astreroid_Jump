@@ -7,20 +7,20 @@ public class LevelManager : MonoBehaviour {
 	public int ambientCount;
 	public GameObject player;
 	public Transform generationPoint;
-	public int spaceBetween;
+	public int spaceBetweenX;
+	public int spaceBetweenY;
 	public GameObject pickup;
 	public Transform ambientParent;
+	public Transform pickupParent;
 	public GameObject[] a_asteroid;
 	public GameObject[] w_asteroid;
 	public static LevelManager Instance { get{ return m_instance;} }
 	private Transform lastPlatformPos;
+	private Vector3 playerStartPos;
 	private GameObject newPlatform;
 	private static LevelManager m_instance = null;
 	private GameObject[] a_asteroids;
 	private List<GameObject> w_asteroids = new List<GameObject>();
-	private int widthSml;
-	private int widthMed;
-	private int widthLrg;
 	// Use this for initialization
 	private GameObject[] gameObjects;
 
@@ -42,13 +42,20 @@ public class LevelManager : MonoBehaviour {
 		int randomint = Random.Range(3,6);
 		Vector3 newScale = new Vector3(randomint,randomint,randomint);
 		temp.transform.localScale = newScale;
+		SpawnPickup(temp.transform.position);
 		return temp;
 	}
 
 	private Vector3 GetNewPosition () {
 		Vector3 pos = newPlatform.transform.position;
-		int offset = spaceBetween + Random.Range(-10,10);
-		pos.x += offset;
+		int offsetX = spaceBetweenX + Random.Range(-10,10);
+		int offsetY = spaceBetweenY + Random.Range(-10,10);
+		pos.x += offsetX;
+		if (pos.y + offsetY > 20) {
+			pos.y -= offsetY;
+		} else {
+			pos.y += offsetY;
+		}
 		return pos;
 	}
 
@@ -76,6 +83,7 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	void Start () {
+		playerStartPos = player.transform.position;
 		newPlatform = Instantiate(w_asteroid[1]);
 		lastPlatformPos = newPlatform.transform;
 		w_asteroids.Add(newPlatform);
@@ -94,7 +102,21 @@ public class LevelManager : MonoBehaviour {
 	}
 
 	public void InitGame() {
-		player.transform.position = Vector3.zero;
+		player.transform.position = playerStartPos;
+		player.GetComponent<Rigidbody>().velocity = Vector3.zero;
+		player.GetComponent<Player_Controller>().boosterFuel = 1f;
+		player.GetComponent<ScoreTracker>().m_score = 0f;
+	}
+
+	private void SpawnPickup (Vector3 pos) {
+		int chance = Random.Range(0, 10);
+		if (chance == 0) {
+		pos.y += 10;
+		GameObject newPickup = Instantiate(pickup);
+		newPickup.transform.position = pos;	
+		newPickup.transform.parent = pickupParent;	
+		Debug.Log("Here");	
+		}
 	}
 }
 

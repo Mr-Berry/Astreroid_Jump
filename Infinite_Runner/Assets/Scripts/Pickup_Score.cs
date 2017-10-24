@@ -17,6 +17,7 @@ public class Pickup_Score : MonoBehaviour {
 	void OnTriggerEnter (Collider other) {
 		if (other.gameObject.GetComponent<ScoreTracker>() != null) {
 			other.gameObject.GetComponent<ScoreTracker>().AddBonus();
+			other.gameObject.GetComponent<Player_Controller>().Refuel();
 			Destroy(this.gameObject);
 		}
 	}

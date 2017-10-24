@@ -14,13 +14,15 @@ public class GameStates : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		setGameState(STATES.SCORE);
+		GameObjectStates[(int)state].SetActive(true);
+		state = STATES.MENU;
 		cameraPos = mainCamera.transform.position;
+		setCamera();
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+		HandleQuit();
 	}
 
 	public void setGameState (STATES newState) {
@@ -28,6 +30,11 @@ public class GameStates : MonoBehaviour {
 		state = newState;
 		GameObjectStates[(int)state].SetActive(true);
 		SetInactive(old);
+		if (state == STATES.PLAY) {
+			levelManager.InitGame();
+		} else if (state == STATES.SCORE) {
+			GameObjectStates[(int)state].GetComponent<ScoreBoard>().UpdateScoreBoard();
+		}
 	}
 
 	private void SetInactive (STATES old) {
@@ -36,5 +43,11 @@ public class GameStates : MonoBehaviour {
 
 	public void setCamera () {
 		mainCamera.transform.position = cameraPos;
+	}
+
+	private void HandleQuit () {
+		if (Input.GetKeyDown(KeyCode.Escape)) {
+			setGameState(GameStates.STATES.MENU);
+		}
 	}
 }
